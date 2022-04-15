@@ -1,0 +1,35 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, appendix, bm, graphicx, hyperref, mathrsfs}
+
+\CTEXsetup[format={\Large\bfseries}]{section}
+
+\title{\textbf{测试报告}}
+\author{第25组}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{概述}
+本次测试执行了所有的测试计划。下面列出对于每个方法的单元测试的测试结果和覆盖率分析。
+
+\section{对search方法的测试}
+
+\subsection{测试结果}
+通过了所有的测试用例。
+
+\subsection{覆盖率分析}
+执行tree.search(6)时，控制流经过的路径为 J A B D E G I K
+
+执行tree.search(5)时，控制流经过的路径为 J A B D E F A B D E G H A B D E G I K
+
+执行tree.search(114514)时，控制流经过的路径为 J A B D E G H A B D E G H A B C K
+
+因此，三条路径覆盖了三个变量x, key, cmp的定义节点到所有使用节点以及后续节点的定义-清除路径。
+根据全使用准则，覆盖率为100\%。
+
+\section{各小组成员贡献比例}
+谭博仁、周峰和张贻天贡献均为33\%，KENT HUGO GEMIARTHA贡献为0。
+
+\end{document}

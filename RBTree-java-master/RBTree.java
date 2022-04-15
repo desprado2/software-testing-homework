@@ -73,43 +73,32 @@ public class RBTree<T extends Comparable<T>> {
     }
 
     /* 
-     * 查找最小结点：返回tree为根结点的红黑树的最小结点。
+     * 查找最小值，若树为空则返回null
      */
-    public RBTNode<T> minimum(RBTNode<T> tree) {
-        if (tree == null)
+    public T minimum() {
+        if (mRoot == null)
             return null;
 
-        while(tree.left != null)
-            tree = tree.left;
-        return tree;
-    }
+        RBTNode<T> p = mRoot;
+        while (p.left != null)
+            p = p.left;
 
-    public T minimum() {
-        RBTNode<T> p = minimum(mRoot);
-        if (p != null)
-            return p.key;
-
-        return null;
+        return p.key;
     }
      
     /* 
-     * 查找最大结点：返回tree为根结点的红黑树的最大结点。
+     * 查找最大值，若树为空则返回null
      */
-    public RBTNode<T> maximum(RBTNode<T> tree) {
-        if (tree == null)
-            return null;
-
-        while(tree.right != null)
-            tree = tree.right;
-        return tree;
-    }
 
     public T maximum() {
-        RBTNode<T> p = maximum(mRoot);
-        if (p != null)
-            return p.key;
+        if (mRoot == null)
+            return null;
 
-        return null;
+        RBTNode<T> p = mRoot;
+        while (p.right != null)
+            p = p.right;
+
+        return p.key;
     }
 
     /* 

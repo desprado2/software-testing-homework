@@ -304,15 +304,11 @@ public class RBTree<T extends Comparable<T>> {
      *     key 插入结点的键值
      */
     public void insert(T key) {
-        System.out.println(key);
         RBTNode<T> node = search(key);
         if (node != null) return;
 
         node = new RBTNode<T>(key,BLACK,null,null,null);
-
-        // 如果新建结点失败，则返回。
-        if (node != null)
-            insert(node);
+        insert(node);
     }
 
 
@@ -497,55 +493,12 @@ public class RBTree<T extends Comparable<T>> {
     }
 
     /* 
-     * 删除结点(z)，并返回被删除的结点
-     *
-     * 参数说明：
-     *     tree 红黑树的根结点
-     *     z 删除的结点
+     * 删除结点
      */
     public void remove(T key) {
         RBTNode<T> node; 
 
         if ((node = search(mRoot, key)) != null)
             remove(node);
-    }
-
-    /*
-     * 销毁红黑树
-     */
-    public void destroy(RBTNode<T> tree) {
-        if (tree==null)
-            return ;
-
-        if (tree.left != null)
-            destroy(tree.left);
-        if (tree.right != null)
-            destroy(tree.right);
-
-        tree=null;
-    }
-
-    public void clear() {
-        destroy(mRoot);
-        mRoot = null;
-    }
-
-    public void print(RBTNode<T> tree, T key, int direction) {
-
-        if(tree != null) {
-
-            if(direction==0)    // tree是根节点
-                System.out.printf("%2d(B) is root\n", tree.key);
-            else                // tree是分支节点
-                System.out.printf("%2d(%s) is %2d's %6s child\n", tree.key, isRed(tree)?"R":"B", key, direction==1?"right" : "left");
-
-            print(tree.left, tree.key, -1);
-            print(tree.right,tree.key,  1);
-        }
-    }
-
-    public void print() {
-        if (mRoot != null)
-            print(mRoot, mRoot.key, 0);
     }
 }

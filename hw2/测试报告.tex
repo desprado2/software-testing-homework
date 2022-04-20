@@ -12,7 +12,11 @@
 \maketitle
 
 \section{概述}
-本次测试执行了所有的测试计划。下面列出对于每个方法的单元测试的测试结果和覆盖率分析。
+本次测试执行了所有的测试计划。总的覆盖率结果如下图所示，没有达到100\%是因为有一部分代码本身是不可能执行到的。
+
+\includegraphics[scale=0.5]{screenshots/coverage.png}
+
+下面列出对于每个方法的单元测试的测试结果和覆盖率分析。
 
 \section{对search方法的测试}
 
@@ -86,6 +90,34 @@ A B D E G H J
 A B D E G I J
 
 满足$C_1p$指标，覆盖率为100\%。
+
+\section{对insertFixUp方法的测试}
+\subsection{测试结果}
+    通过了所有的测试用例。
+
+\subsection{覆盖率分析}
+    从上到下覆盖了所有\textbf{可达}的DD路径。
+
+\section{对insert方法的测试}
+\subsection{测试结果}
+    通过了所有的测试用例。
+
+\subsection{覆盖率分析}
+    从上到下覆盖了所有\textbf{可达}的DD路径。
+
+\section{对removeFixUp方法的测试}
+\subsection{测试结果}
+    通过了所有的测试用例。
+
+\subsection{覆盖率分析}
+    代码覆盖率为100\%，满足$C_0$指标。
+
+\section{对remove方法的测试}
+\subsection{测试结果}
+    通过了所有的测试用例。
+
+\subsection{覆盖率分析}
+    代码覆盖率为100\%，满足$C_0$指标。
 
 \section{各小组成员贡献比例}
 谭博仁、周峰和张贻天贡献均为33\%，KENT HUGO GEMIARTHA贡献为0。
